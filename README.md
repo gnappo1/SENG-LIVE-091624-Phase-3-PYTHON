@@ -1,4 +1,4 @@
-# SENG-LIVE-WEST-060324 Phase 3 - Python
+# SENG-LIVE-NTL-091624 Phase 3 - Python
 
 ## Phase Level Objectives
 
@@ -12,14 +12,14 @@
 
 | Lecture                                                                     |   Notes    | Videos     | Starter      | Solution      |
 | --------------------------------------------------------------------------- | :--------: | ---------- | ------------ | ------------- |
-| 1. (10/23/23) Python Fundamentals                                           | [Notes]() | [Video]() |
-| 2. (10/24/23) Python Data Structures                                        | [Notes]() | [Video]() | [Starter]() | [Solution]() |
-| 3. (10/25/23) Object Oriented Programming in Python                         | [Notes]() | [Video]() | [Starter]() | [Solution]() |
-| 4. (10/26/23) OOP 2: Class Methods, Class Variables | [Notes]() | [Video]() | [Starter]() | [Solution]() |
-| 5. (10/27/23) Object Relationships     | [Notes]() | [Video]() | [Starter]() | [Solution]() |
-| 6. (10/30/23) SQL Fundamentals & Table Relations                            | [Notes]() | [Video]() | [Starter]() | [Solution]() |
-| 7. (11/1/23) Object-Relational Mapping                                     | [Notes]() | [Video]() | [Starter]() | [Solution]() |
-| 8. (11/03/23) Your First CLI                                          | [Notes]() | [Video]() | [Starter]() | [Solution]() |
+| 1. (10/25/24) Python Fundamentals                                           | [Notes]() | [Video]() |
+| 2. (10/28/24) Python Data Structures                                        | [Notes]() | [Video]() | [Starter]() | [Solution]() |
+| 3. (10/29/24) Object Oriented Programming in Python                         | [Notes]() | [Video]() | [Starter]() | [Solution]() |
+| 4. (10/30/24) OOP 2: Class Methods, Class Variables | [Notes]() | [Video]() | [Starter]() | [Solution]() |
+| 5. (10/31/24) Object Relationships     | [Notes]() | [Video]() | [Starter]() | [Solution]() |
+| 6. (11/1/24) SQL Fundamentals & Table Relations                            | [Notes]() | [Video]() | [Starter]() | [Solution]() |
+| 7. (11/4/24) Object-Relational Mapping                                     | [Notes]() | [Video]() | [Starter]() | [Solution]() |
+| 8. (11/05/24) Your First CLI                                          | [Notes]() | [Video]() | [Starter]() | [Solution]() |
 
 
 ## 1: Python Fundamentals
@@ -293,4 +293,3 @@
 - Many-to-Many 
 - Stretch Topic
     - Making a CLI
-
