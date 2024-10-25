@@ -33,16 +33,31 @@ pet_name = "Rose"
 # 4. Printing to Console
 # print(f"Hey! My name is {pet_name} and my mood is {pet_mood}")
 
-def hello():
-    name = "Matteo" #
-    def second_function():
-        global name
-        name="hello"
-    second_function()
-    print(f"outside print: {name}")
+def the_global_keyword():
+    # In Python, if you assign a value to a variable inside a function
+    # without using the global keyword, Python assumes that you're creating a
+    # local variable within that function's scope.
+    # If a variable with the same name exists in the global scope, it won't be modified.
+    # So, you would use the global keyword when you want to modify a global variable
+    # from within a function.
+    global pet_name
+    pet_name = "matteo"  # * without the global keyword it would create a local variable
+    #! I just modified the global variable with the line above
+    return pet_name
+
+def outer_function():
+    x = "outer"
+    def inner_function():
+        nonlocal x  # refers to the enclosing scope's x
+        x = "modified in inner"
+
+    inner_function()
+    print(x)  # Outputs: modified in inner
+
+outer_function()
 
 # hello()
-# print(name) #NameError: name 'name' is not defined
+# print(x) #NameError: name 'name' is not defined
 
 #TODO 1. ✅ Create a condition to check a pet's mood
     # If "pet_mood" is "Hungry!", "Rose needs to be fed."
@@ -109,7 +124,7 @@ def pet_birthday(age):
     except Exception as e:
         return e
 
-print(pet_birthday("10"))
+pet_birthday("10")
     # Note => To view more common Python exceptions, visit https://docs.python.org/3/library/exceptions.html
 
 # 🚨 To create an ipdb breakpoint, comment / uncomment line below:
