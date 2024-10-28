@@ -60,51 +60,48 @@ ages_generator = tuple(range(10))
 pet_fav_food = {'house plants', 'fish', 'bacon'}
 
 #TODO Reading
-#27. ✅ Print set elements with a loop
-#27. ✅ Check if an element is in a set 
+#25. ✅ Print set elements with a loop
+#26. ✅ Check if an element is in a set 
 #27. ✅ Get first element
 #28. ✅ Get a copy of a set
-#28. ✅ isdisjoint, issubset, issuperset
+#29. ✅ isdisjoint, issubset, issuperset
 
 #TODO Updating 
-#29. ✅ Add an element to a set
-#30. ✅ Union, intersection, difference
-#30. ✅ Update current set with elements from other set
+#30. ✅ Add an element to a set
+#31. ✅ Union, intersection, difference
+#32. ✅ Update current set with elements from other set
 
 #TODO Deleting
-#31. ✅ Delete specific el using ".remove"  VS ".discard"
-#32. ✅ Delete random element using ".pop"
-#33. ✅ Delete the last item for Rose using "popitem()"
-#33b ✅ Delete every key/value pair
-
+#33. ✅ Delete specific el using ".remove"  VS ".discard"
+#34. ✅ Delete random element using ".pop"
 
 #! Dictionaries (from 3.7+, dictionaries are ordered)
 #TODO Creating 
-#25. ✅  Create a dictionary of pet information with the keys "name", "age" and "breed"
+#35. ✅  Create a dictionary of pet information with the keys "name", "age" and "breed"
 pet_info_rose = {'name':'Rose', 'age':11, 'breed':'domestic long'}
-#26. ✅  Use dict to create a dictionary of pet information with the keys "name", "age" and "breed" => dict(...)
+#36. ✅  Use dict to create a dictionary of pet information with the keys "name", "age" and "breed" => dict(...)
 pet_info_spot = dict(name='Spot', age=25, breed='boxer')
 
 #TODO Reading
-#27. ✅ Print the pet attribute of "name" using bracket notation 
+#37. ✅ Print the pet attribute of "name" using bracket notation 
 
-#28. ✅ Print the pet attribute of "age" using ".get"
+#38. ✅ Print the pet attribute of "age" using ".get"
 
     # Note: ".get" is preferred over bracket notation in most cases 
     # because it will return "None" instead of an error
-#28b. ✅ Get dict keys
-#28c. ✅ Get dict values
-#28d. ✅ Get dict pairs
+#39b. ✅ Get dict keys
+#39c. ✅ Get dict values
+#39d. ✅ Get dict pairs
 
 #TODO Updating 
-#29. ✅ Update Rose's age to 12
-#30. ✅ Update Spot's age to 26
+#40. ✅ Update Rose's age to 12
+#41. ✅ Update Spot's age to 26
 
 #TODO Deleting
-#31. ✅ Delete Rose's age using the "del" keyword => []
-#32. ✅ Delete Spot's age using ".pop"
-#33. ✅ Delete the last item for Rose using "popitem()"
-#33b ✅ Delete every key/value pair => clear()
+#42. ✅ Delete Rose's age using the "del" keyword => []
+#43. ✅ Delete Spot's age using ".pop"
+#44. ✅ Delete the last item for Rose using "popitem()"
+#45 ✅ Delete every key/value pair => clear()
 
 
 #! Loops 
@@ -126,20 +123,21 @@ pet_info = [
     }
 ]
 
-#34. ✅ Loop through a range of 10 and print every number within the range
-#35. ✅ Loop through a range between 50 and 60 that iterates by 2 and print every number
-#36. ✅ Loop through the "pet_info" list and print every dictionary
-#37. ✅ Create a function that takes a list a parameter 
+#46. ✅ Loop through a range of 10 and print every number within the range
+#47. ✅ Loop through a range between 50 and 60 that iterates by 2 and print every number
+#48. ✅ Loop through the "pet_info" list and print every dictionary
+
+#! Exercises for you to practice
+#49. ✅ Create a function that takes a list a parameter 
     # The function should use a "for" loop to loop through the list and print each item 
     # Invoke the function and pass it "pet_names" as an argument
-#38. ✅ Create a function that takes a list as a parameter
+#50. ✅ Create a function that takes a list as a parameter
     # The function should define a variable ("counter") and set it to 0
     # Create a "while" loop 
         # The loop will continue as long as the counter is less than the length of the list
         # Every loop should increase the count by 1
     # Once the loop has finished, return the final value of "counter"
-
-#39. ✅ Create a function that updates the age of a given pet
+#51. ✅ Create a function that updates the age of a given pet
         # The function should take a list of "dictionaries", "name" and "age" as parameters 
         # Create an index variable and set it to 0
         # Create a while loop 
@@ -151,19 +149,19 @@ pet_info = [
     
 #! Functional Programming corner
 # map like VS map
-#40. ✅ Use list comprehension to return a list containing every pet name from "pet_info" changed to uppercase
+#52. ✅ Use list comprehension to return a list containing every pet name from "pet_info" changed to uppercase
 
 # find like VS find
-#41. ✅ Use list comprehension to find a pet named spot
+#53. ✅ Use list comprehension to find a pet named spot
 
 # filter like VS filter
-#42. ✅ Use list comprehension to find all of the pets under 3 years old
+#54. ✅ Use list comprehension to find all of the pets under 3 years old
 
 # reduce like VS reduce
-#42. ✅ Use list comprehension to find all of the pets under 3 years old
+#55. ✅ Use list comprehension to find all of the pets under 3 years old
 
 #! Writing Generators
-#43. ✅ Create a generator expression matching the filter above
+#56. ✅ Create a generator expression matching the filter above
 
 #! Compare Generators and Expressions
 import sys
