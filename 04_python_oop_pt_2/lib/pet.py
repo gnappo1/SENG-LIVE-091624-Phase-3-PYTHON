@@ -2,11 +2,11 @@
 # Class Attributes and Methods
 
 # import ipdb
-from decorator_profiler import measure_performance
+# from decorator_profiler import measure_performance
 
 class Pet:
     # ✅ Define a class attribute (total_pets) and set it to 0
-
+    all_ = []
     # __slots__= ('_name', '_age', '_temperament', '_breed', '_owner')
 
     # What happens with our instances when we add a class attribute?
@@ -21,13 +21,18 @@ class Pet:
         self.breed = breed
         self.temperament = temperament
         self.owner = owner
+        type(self).all_.append(self)
+        # self.all_.append(self) #! in many OOP languages you cannot access a class attr onto an instance
+        # Pet.all_.append(self) #! anti-practice, breaks inheritance
 
     # Using Property to control the behavior of attributes
-    def get_name(self):
+    @property
+    def name(self):
         print("Inside the name property getter")
         return self._name
 
-    def set_name(self, new_name):
+    @name.setter
+    def name(self, new_name):
         print("Inside the name property setter")
         if not isinstance(new_name, str):
             raise TypeError("Value must be a string")
@@ -36,13 +41,13 @@ class Pet:
         else:
             self._name = new_name
 
-    name = property(get_name, set_name)
-
-    def get_breed(self):
+    @property
+    def breed(self):
         print("Inside the breed property getter")
         return self._breed
 
-    def set_breed(self, new_breed):
+    @breed.setter
+    def breed(self, new_breed):
         print("Inside the breed property setter")
         if not isinstance(new_breed, str):
             raise TypeError("Value must be a string")
@@ -51,7 +56,7 @@ class Pet:
         else:
             self._breed = new_breed
 
-    breed = property(get_breed, set_breed)
+    # breed = property(get_breed, set_breed)
 
     def get_age(self):
         print("Inside the age property getter")
@@ -85,7 +90,8 @@ class Pet:
 
     def get_temperament(self):
         print("Inside the temperament property getter")
-        raise AttributeError('Privacy concern, you cannot see me!')
+        # raise AttributeError('Privacy concern, you cannot see me!')
+        return self._temperament
 
     def set_temperament(self, new_temperament):
         print("Inside the temperament property setter")
@@ -107,6 +113,21 @@ class Pet:
             owner:{self.owner}
         ''')
 
+    @classmethod
+    def find_all_pets_by_temperament(cls, temperament_type):
+        return [pet for pet in cls.all_ if pet.temperament == temperament_type]
+
+    @classmethod
+    def find_first_pet_by_age(cls, age_to_check):
+        # for pet in cls.all_:
+        #     if pet.age == age_to_check:
+        #         return pet
+        return next((pet for pet in cls.all_ if pet.age == age_to_check), None)
+    
+    # @staticmethod
+    # def add(a, b):
+    #     return a + b
+
 fido = Pet(name="Fido", age=2, breed="pug", temperament="docile", owner="Matteo")
-milo = Pet(name="Milo", age=2, breed="pug", temperament="docile", owner="Matteo")
+milo = Pet(name="Milo", age=2, breed="pug", temperament="aggressive", owner="Matteo")
 print('done')

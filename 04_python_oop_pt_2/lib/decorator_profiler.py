@@ -1,7 +1,17 @@
 from functools import wraps
 import tracemalloc
 from time import perf_counter 
+import time
 
+def new_decorator(func):
+    def wrapper(*args, **kargs):
+        start_time = time.time()
+        result = func(*args, **kargs)
+        end_time = time.time()
+        print(f"{func.__name__} took {end_time - start_time:.2f} seconds")
+        return result
+    
+    return wrapper
 
 def measure_performance(func):
     '''Measure performance of a function'''
