@@ -1,7 +1,7 @@
 from datetime import datetime
 class Patient:
-    all = []
+    all_ = []
 
     def __init__(self, name):
         self.name = name
-        type(self).all.append(self)
+        type(self).all_.append(self)

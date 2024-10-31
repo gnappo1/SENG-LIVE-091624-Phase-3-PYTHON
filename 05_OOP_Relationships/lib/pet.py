@@ -1,10 +1,10 @@
 class Pet:
-    all = []
+    all_ = []
 
     def __init__(self, name, breed):
         self.name = name
         self.breed = breed
-        type(self).all.append(self)
+        type(self).all_.append(self)
 
     @property
     def name(self):
@@ -18,6 +18,7 @@ class Pet:
             raise ValueError("Names must be at least one char long")
         else:
             self._name = new_name
+    
     @property
     def breed(self):
         return self._breed
