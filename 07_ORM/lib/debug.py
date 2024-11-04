@@ -8,7 +8,6 @@ from pet import Pet, CONN as pet_conn, CURSOR as pet_cursor
 # frank.save()
 
 # Pet.create_table()
-# spot = Pet("spot", "dog", "chihuahua", "feisty")
-# spot.save()
-
+spot = Pet.create("spot", "dog", "chihuahua", "feisty")
 import ipdb; ipdb.set_trace()
+Pet.find_by_name("spot")
