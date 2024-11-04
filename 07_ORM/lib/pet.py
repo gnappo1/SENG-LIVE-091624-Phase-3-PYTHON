@@ -29,7 +29,7 @@ class Pet:
 
     # ✅ 6. Add "update" Instance Method to Update the db based on its Attributes
 
-    # ✅ 7. Add "new_from_db" Class Method to Retrieve Newest "pet" Instance w/ Attributes From DB
+    # ✅ 7. Add "new_from_db" Class Method to Instantiate a new "pet" Instance from a row of pet Attributes From DB
 
     # ✅ 8. Add "get_all" Class Method to Retrieve All "pet" Instances From DB
 
