@@ -113,15 +113,18 @@ class Doctor:
 
     @classmethod
     def new_from_db(cls):
-        CURSOR.execute(
+        try:
+            CURSOR.execute(
+                """
+                SELECT * FROM doctors
+                ORDER BY id DESC
+                LIMIT 1;
             """
-            SELECT * FROM doctors
-            ORDER BY id DESC
-            LIMIT 1;
-        """
-        )
-        row = CURSOR.fetchone()
-        return cls(row[1], row[2], row[3], row[0])
+            )
+            row = CURSOR.fetchone()
+            return cls(row[1], row[2], row[3], row[0])
+        except Exception as e:
+            return e
 
     @classmethod
     def get_all(cls):
@@ -166,17 +169,21 @@ class Doctor:
     #! Utility ORM Instance Methods
     def save(self):
         # self is only instantiated so it has no id
-        CURSOR.execute(
-            """
-            INSERT INTO doctors (full_name, phone_number, specialty)
-            VALUES (?, ?, ?);
-        """,
-            (self.full_name, self.phone_number, self.specialty),
-        )
-        CONN.commit()
-        self.id = CURSOR.lastrowid
-        type(self).all[self.id] = self
-        return self
+        try:
+            CURSOR.execute(
+                """
+                INSERT INTO doctors (full_name, phone_number, specialty)
+                VALUES (?, ?, ?);
+            """,
+                (self.full_name, self.phone_number, self.specialty),
+            )
+            CONN.commit()
+            self.id = CURSOR.lastrowid
+            type(self).all[self.id] = self
+            return self
+        except Exception as e:
+            CONN.rollback()
+            return e
 
     def update(self):
         CURSOR.execute(

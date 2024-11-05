@@ -73,7 +73,7 @@ class Patient:
         ]
 
     def doctors(self):
-        return list({appt.doctor for appt in self.appointments()})
+        return list({appt.doctor() for appt in self.appointments()})
 
     #! Helper Methods
 
